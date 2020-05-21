@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="x-apple-disable-message-reformatting">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Anytime Template</title>
+</head>
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+    <table class=$id style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;border-collapse: separate;width: 100%;background-color: #f6f6f6;margin: 0;padding: 0;font: inherit;vertical-align: baseline;border-spacing: 5px;">
+        <tbody>
+            <tr>
+                <td style="vertical-align: top; display: block; margin: 20px auto; max-width: 580px; padding: 10px; width: 580px;">
+                    <div style="box-sizing:border-box;display:block;margin:0 auto;max-width:580px;font:inherit;min-width: 580px;vertical-align:baseline;padding:10px;">
+                        <table style="border-collapse: separate;width: 580px !important;background: #ffffff;border-radius: 5px;border-spacing: 5px;box-shadow: 0 0 2px 0 #b8bfc4;margin: 0;padding: 0;font: inherit;vertical-align: baseline;">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: top; box-sizing: border-box; padding: 20px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;width: 100%;border-spacing: 5px;background-color: #ffffff;margin: 0;padding: 0;font: inherit;vertical-align: baseline;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="vertical-align: top;">
+                                                        #if( $type == "reminder" )
+                                                            <p style="margin: 0;margin-left: 10px;font-size: 22px;font-weight: 400; color: #000000;">
+                                                                Reminder:
+                                                            </p>
+                                                        #end
+                                                        #if( $type == "delete" )
+                                                            <p style="margin: 0;margin-bottom: 30px;margin-left: 10px;font-size: 22px;font-weight: 800; color: #f54736;">
+                                                                $subNTitle.subject
+                                                            </p>
+                                                        #else
+                                                            <p style="margin: 0;margin-bottom: 30px;margin-left: 10px;font-size: 22px;font-weight: 800; color: #000000;">
+                                                                $subNTitle.subject
+                                                            </p>
+                                                        #end
+                                                        <p style="margin: 0;font-weight: 500;margin-left: 10px;font-size: 15px; color: #000000;">Hi,</p>
+                                                        <p style="margin: 0;margin-bottom: 15px;margin-left: 10px;font-weight: 500;font-size: 15px; color: #000000;">
+                                                            $subNTitle.title
+                                                        </p>
+                                                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;width: 100%;box-sizing: border-box;border-spacing: 5px;background-color: #ffffff;">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td align="left" style="vertical-align: top; padding-bottom: 15px;">
+
+                                                                        #if( $teleportLink != "" && $type != "delete")
+                                                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;width: auto;margin-bottom: 30px;border-spacing: 5px;background-color: #ffffff;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a href="$teleportLink" style="color: #fff;text-decoration: none;">
+                                                                                                <button style="border-radius: 8px;background-color:#6285ff;height: 42px;color: #fff;border: none;padding-left: 30px;padding-right: 30px;font-size: 14px;font-weight: 600;outline: 0;position: relative;transition: all .3s;cursor: pointer;">
+                                                                                                    Go to the call
+                                                                                                </button>
+                                                                                            </a>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        #end
+                                                                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; background: #ffffff; border-radius: 8px; border: 1px solid #eeeeee;border-spacing: 0px;box-shadow: 0 0 1px 0 #b8bfc4;">
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td style="flex: auto; padding: 20px; padding-bottom: 15px;border-bottom: 1px solid #eeeeee; border-top-left-radius: 8px; border-top-right-radius: 8px;">
+                                                                                        <p style="margin: 0;font-weight: 400;color: #969696; font-size: 15px;">
+                                                                                            Name
+                                                                                        </p>
+                                                                                        <p style="margin: 0;font-weight: 550; font-size: 17px; color: #000000;">
+                                                                                            $eventTitle
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <div class=$id style="display: flex;box-sizing: border-box;">
+                                                                                            <div class=$id style="flex: auto;padding: 20px;height: 110px;border-bottom: 1px solid #eeeeee;border-right: 1px solid #eeeeee;box-sizing: border-box;width: 250px;">
+                                                                                                <figure style="margin: 0;">
+                                                                                                    <img style="width: 40px;margin: 0px 0px 7px 0px;padding: 0;font: inherit;vertical-align: baseline;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/addEventDates.png">
+                                                                                                </figure>
+                                                                                                <span style="font-weight: 800; font-size: 15px;color: #000000;">
+                                                                                                    $dateTime.startDay
+                                                                                                </span>
+                                                                                                <span style="margin: 0;font-weight: 400; opacity: 50%; font-size: 15px;color: #000000;">,
+                                                                                                    $dateTime.startDate
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div class=$id style="flex: auto;padding: 20px;height: 110px;border-bottom: 1px solid #eeeeee;box-sizing: border-box;width: 250px;">
+                                                                                                <figure style="margin: 0;">
+                                                                                                    <img style="width: 40px;margin: 0px 0px 7px 0px;padding: 0;font: inherit;vertical-align: baseline;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/duration.png">
+                                                                                                </figure>
+                                                                                                <p style="color: #000000;font-weight: 800;font-size: 15px;margin: 0;">
+                                                                                                    $dateTime.startTime - $dateTime.endTime
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                #if( $oldDateTime != "" )
+                                                                                    #if( $oldDateTime.startDay )
+                                                                                        <tr>
+                                                                                            <td style="flex: auto;padding: 20px;padding-bottom: 15px;border-bottom: 1px solid #eeeeee;border-top-left-radius: 8px;border-top-right-radius: 8px;text-align: center;">
+                                                                                                <p style="margin: 0;font-weight: 400;font-size: 17px; color: #000000;">Previous date and time</p>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>
+                                                                                                <div class=$id style="display: flex;box-sizing: border-box;">
+                                                                                                    <div class=$id style="flex: auto;padding: 20px;height: 110px;border-bottom: 1px solid #eeeeee;border-right: 1px solid #eeeeee;box-sizing: border-box;width: 250px;">
+                                                                                                        <figure style="margin: 0;">
+                                                                                                            <img style="width: 40px;margin: 0px 0px 7px 0px;padding: 0;font: inherit;vertical-align: baseline;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/addEventDatesOld.png">
+                                                                                                        </figure>
+                                                                                                        <span style="font-weight: 800; font-size: 15px;color: #969696;">
+                                                                                                            $oldDateTime.startDay
+                                                                                                        </span>
+                                                                                                        <span style="margin: 0;font-weight: 400; opacity: 50%; font-size: 15px;color: #969696;">,
+                                                                                                            $oldDateTime.startDate
+                                                                                                        </span>
+                                                                                                    </div>
+                                                                                                    <div class=$id style="flex: auto;padding: 20px;height: 110px;border-bottom: 1px solid #eeeeee;box-sizing: border-box;width: 250px;">
+                                                                                                        <figure style="margin: 0;">
+                                                                                                            <img style="width: 40px;margin: 0px 0px 7px 0px;padding: 0;font: inherit;vertical-align: baseline;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/durationOld.png">
+                                                                                                        </figure>
+                                                                                                        <p style="color: #969696;font-weight: 800;font-size: 15px;margin: 0;">
+                                                                                                            $oldDateTime.startTime - $oldDateTime.endTime
+                                                                                                        </p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    #end
+                                                                                #end
+
+                                                                                #if( $teleportLink != "" && $type != "delete")
+                                                                                    <tr>
+                                                                                        <td style="flex: auto; padding: 20px; height: 100px;border-bottom: 1px solid #eeeeee;">
+                                                                                            <p style="margin: 0;font-weight: 500;color: #969696; font-size: 15px;margin-bottom: 8px;">
+                                                                                                Location
+                                                                                            </p>
+                                                                                            <div style="display: flex;">
+                                                                                                <figure style="margin: 0;">
+                                                                                                    <img style="width: 30px;height: 30px;margin-top: 5px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/teleport-icon.png">
+                                                                                                </figure>
+                                                                                                <div style="margin-left: 10px;">
+                                                                                                    <p style="margin: 0;font-weight: 400; font-size: 15px;">
+                                                                                                        Teleport call
+                                                                                                    </p>
+                                                                                                    <br style="display: none;">
+                                                                                                    <p style="font-size:15px;color: #6285ff;margin: 0;">
+                                                                                                        <a href="$teleportLink" style="color: #6285ff;text-decoration: none;">
+                                                                                                            $teleportLink
+                                                                                                        </a>
+                                                                                                    </p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                #end
+                                                                                #if( $providerList != "" )
+                                                                                    <tr>
+                                                                                        <td style="flex: auto;padding: 20px 20px 0px 20px;height:100px;">
+                                                                                            <p style="margin: 0;font-weight: 500;color: #969696; font-size: 15px; margin-bottom: 8px;">
+                                                                                                Team members
+                                                                                            </p>
+
+                                                                                            #foreach ($provider in $providerList)
+                                                                                                <div style="display: flex; margin-bottom: 10px;">
+                                                                                                    <figure style="margin: 0;">
+                                                                                                        <a href="#">
+                                                                                                            <img style="width: 30px;object-fit: cover;height: 30px;border-radius: 50%;" src="$provider.imageURL">
+                                                                                                        </a>
+                                                                                                    </figure>
+                                                                                                    <div style="margin-left: 10px;">
+                                                                                                        <p style="margin: 0;font-weight: 400; font-size: 15px; color: #000000;">
+                                                                                                            $provider.fullName
+                                                                                                        </p>
+                                                                                                        <br style="display: none;">
+                                                                                                        <p style="font-size:15px;color: #6285ff;margin: 0;">
+                                                                                                            <a href="mailto:$provider.login" style="color: #6285ff;text-decoration: none;" target="_blank">
+                                                                                                                $provider.login
+                                                                                                            </a>
+                                                                                                        </p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            #end
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                #end
+
+                                                                                #if( $consumerList != "" )
+                                                                                    <tr>
+                                                                                        <td style="flex: auto; padding: 0px 20px 10px 20px;height:100px;">
+                                                                                            <p style="margin: 0;font-weight: 500;color: #969696; font-size: 15px; margin-bottom: 8px;">
+                                                                                                Others
+                                                                                            </p>
+
+                                                                                            #foreach ($consumer in $consumerList)
+                                                                                                <div style="display: flex; margin-bottom: 10px;">
+                                                                                                    <figure style="margin: 0;">
+                                                                                                        <a href="#">
+                                                                                                            <img style="width: 30px;object-fit: cover;height: 30px;border-radius: 50%;" src="$consumer.imageURL">
+                                                                                                        </a>
+                                                                                                    </figure>
+                                                                                                    <div style="margin-left: 10px;">
+                                                                                                        <p style="margin: 0;font-weight: 400; font-size: 15px; color: #000000;">
+                                                                                                            $consumer.fullName
+                                                                                                        </p>
+                                                                                                        <br style="display: none;">
+                                                                                                        <p style="font-size:15px;color: #6285ff;margin: 0;">
+                                                                                                            <a href="mailto:$consumer.login" style="color: #6285ff;text-decoration: none;" target="_blank">
+                                                                                                                $consumer.login
+                                                                                                            </a>
+                                                                                                        </p>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            #end
+
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                #end
+
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="border-collapse: separate;width: 580px !important; background: #ffffff; border-radius: 5px;border-spacing: 5px;margin-top: 20px;box-shadow: 0 0 2px 0 #b8bfc4;">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: top; box-sizing: border-box; padding: 30px;">
+                                        <div style="display: flex;box-sizing: border-box;">
+                                            <div style="flex: auto;">
+                                                <p style="margin: 0; margin-bottom: 10px;font-size: 22px; font-weight: 800; color: #000000;">
+                                                    $host.fullName
+                                                </p>
+                                                <p style="margin: 0;margin-bottom: 20px;font-weight: 400;color: #7d7a7a;width: 300px;">
+                                                    $host.description
+                                                </p>
+                                                <div style="display: flex;">
+                                                    <figure style="margin: 0px 10px 0px 0px;">
+                                                        <img style="width: 25px;object-fit: contain;height: 25px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/anytime-icon.png">
+                                                    </figure>
+                                                    <div style="margin-left: 0px;">
+                                                        <p style="font-size:15px;color: #6285ff;line-height: 1.8;font-weight: 400;margin: 0px;">
+                                                            <a href=" $host.link " style="text-decoration: none; color: #6285ff;">
+                                                                 Schedule an event
+                                                            </a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <figure style="margin: 0;">
+                                                    <img style="width: 130px;object-fit: cover;height: 130px;border-radius: 50%;" src="$host.imageURL">
+                                                </figure>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table style="border-collapse: separate;width: 580px !important; background: #ffffff; border-radius: 5px;border-spacing: 5px;margin-top: 20px;box-shadow: 0 0 2px 0 #b8bfc4;">
+                            <tbody>
+                                <tr>
+                                    <td style="vertical-align: top; box-sizing: border-box; padding: 30px;padding-bottom: 0px;">
+                                        <div style="display: flex;box-sizing: border-box;">
+                                            <div>
+                                                <figure style="margin: 0;">
+                                                    <a href="#">
+                                                        <img style="width: 170px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/anytime-mobile-calendar.png">
+                                                    </a>
+                                                </figure>
+                                            </div>
+                                            <div style="margin-left:30px;margin-top: 5px;">
+                                                <p style="margin: 0; margin-bottom: 20px; font-size: 16px; font-weight: 800;color: #000000;">
+                                                    Grow your business with Anytime<span style="color:#6285ff;">.</span>
+                                                </p>
+                                                <ul style="margin-bottom: 5px;font-weight:400;color:#969696;font-size:15px;line-height:1.8;padding:0;list-style: none;">
+                                                    <li style="margin:0">
+                                                        <span>
+                                                            <img style="width: 15px;margin-right: 10px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/tick.png">
+                                                        </span>
+                                                        Easy scheduling for your team
+                                                    </li>
+                                                    <li style="margin:0">
+                                                        <span>
+                                                            <img style="width: 15px;margin-right: 10px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/tick.png">
+                                                        </span>
+                                                        Website with Calendar for your Clients
+                                                    </li>
+                                                </ul>
+                                                <button style="border-radius: 8px;background-color:#6285ff;height: 42px;color: #fff;border: none;padding-left: 30px;padding-right: 30px;font-size: 14px;font-weight: 600;outline: 0;position: relative;transition: all .3s;cursor: pointer;">
+                                                    <span>Try it for free!</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate;width: 580px !important;background-color: #f6f6f6;margin-top: 50px;">
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        <div style="display:inline-flex;height: 40px !important;">
+                                            <span style="font-weight: 500;margin: 10px 0px;color: #000;">Connecting people</span>
+                                            <img style="width: 120px;margin-left: 15px;height: 40px;" src="https://storage.googleapis.com/anytime-email-template-images/email-images/anytime-logo.png">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
